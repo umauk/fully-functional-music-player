@@ -1,0 +1,276 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+.nav_bar {
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #1db954;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo_container {
+  flex: 1;
+}
+
+.logo {
+  max-height: 40px;
+}
+
+.search_container {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.search_input {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+.login_container {
+  flex: 1;
+  text-align: right;
+}
+
+.login_link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Main Content */
+.main_content {
+  display: flex;
+  margin-top: 70px;
+  padding: 20px;
+  gap: 20px;
+}
+
+.sidebar {
+  width: 250px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.sidebar_nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav_link {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav_link:hover, .nav_link.active {
+  background-color: #e8f5e9;
+  color: #1db954;
+}
+
+.nav_icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.profile_details {
+  margin-top: 20px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile_item {
+  margin-bottom: 10px;
+}
+
+.logout_button {
+  background-color: #d32f2f;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.logout_button:hover {
+  background-color: #b71c1c;
+}
+
+/* Content Area */
+.content_area {
+  flex: 1;
+  padding: 20px;
+}
+
+.cordsa_layout {
+  margin-bottom: 30px;
+}
+
+.cordsa_layout h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.cordsa_layout p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.cordsa_cards {
+  display: flex;
+  gap: 20px;
+}
+
+.cordsa_card {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.cordsa_card img {
+  width: 100%;
+  height: auto;
+}
+
+.cordsa_card_content {
+  padding: 15px;
+}
+
+.cordsa_card_content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.cordsa_card_content p {
+  margin-bottom: 15px;
+}
+
+.cordsa_button {
+  background-color: #1db954;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.cordsa_button:hover {
+  background-color: #17a74b;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.page_button {
+  background-color: #1db954;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin: 0 5px;
+}
+
+.page_button:hover {
+  background-color: #17a74b;
+}
+
+.page_button.active {
+  background-color: #17a74b;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #1db954;
+  color: #fff;
+  padding: 30px;
+  gap: 20px;
+  text-align: center;
+}
+
+.footer_section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer_section h4 {
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.footer_section ul {
+  list-style: none;
+}
+
+.footer_section ul li {
+  margin-bottom: 10px;
+}
+
+.social_media {
+  display: flex;
+  justify-content: center;
+}
+
+.social_icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 10px;
+}

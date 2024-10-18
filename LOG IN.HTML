@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        transform: translate(3%, 15%);
+        /* background: linear-gradient(
+          35deg,
+          rgba(255, 0, 0, 0.5),
+          rgba(0, 0, 255, 0.5),
+          rgb(219, 154, 147)
+        ); */
+        background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20221224/pngtree-blue-musical-notes-background-image_1530362.jpg");
+        background-repeat: no-repeat;
+        background-size: 100vw 100vh;
+        overflow: hidden;
+      }
+      .ParentDiv {
+        background-color: rgba(80, 226, 141, 0.21);
+        width: 400px;
+        height: 400px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        display: grid;
+        justify-content: center;
+        box-shadow: 1px 1px 15px;
+        border-radius: 20px;
+        /* margin: 40px; */
+        background-color: transparent;
+      }
+      .receivedOtp,
+      .verificationOtp,
+      .NameInput,
+      .NumberInput,
+      .UserDate,
+      .gender {
+        margin-bottom: 10px;
+      }
+      input {
+        width: 250px;
+        height: 25px;
+        outline: none;
+        background-color: white;
+        border: 1px solid;
+        border-radius: 4px;
+        font-size: 20px;
+      }
+      button {
+        height: 35px;
+        border-radius: 5px;
+        border: 0.8px solid;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      button:hover {
+        color: white;
+      }
+      .btnLogin {
+        background-color: rgba(8, 248, 69, 0.72);
+      }
+      .btnLogin:hover {
+        background-color: rgba(0, 255, 43, 1);
+      }
+      .btn {
+        background-color: rgba(8, 99, 255, 0.61);
+      }
+      .btn:hover {
+        background-color: rgba(34, 0, 255, 1);
+      }
+      .OtpSubmitBtn {
+        background-color: rgba(255, 110, 19, 0.73);
+      }
+      .OtpSubmitBtn:hover {
+        background-color: rgba(255, 151, 0, 1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ParentDiv">
+      <input type="text" class="NameInput" placeholder="Enter the Name" />
+      <input type="tel" class="NumberInput" placeholder="Enter the Number" />
+      <input type="date" class="UserDate" />
+      <input type="text" class="gender" placeholder="Enter Gender" />
+      <input class="receivedOtp" disabled="true" placeholder="Generate OTP" />
+      <button class="btn">SEND OTP</button>
+      <input type="text" class="verificationOtp" placeholder="Enter the OTP" />
+      <button class="OtpSubmitBtn">SUBMIT</button>
+      <button class="btnLogin">Login</button>
+    </div>
+
+    <script>
+      // Get the inputs and buttons
+      let NameInput = document.querySelector(".NameInput");
+      let NumberInput = document.querySelector(".NumberInput");
+      let UserDate = document.querySelector(".UserDate");
+      let receivedOtp = document.querySelector(".receivedOtp");
+      let SendOtpBtn = document.querySelector(".btn");
+      let btnLogin = document.querySelector(".btnLogin");
+      let verificationOtp = document.querySelector(".verificationOtp");
+      let OtpSubmitBtn = document.querySelector(".OtpSubmitBtn");
+      let gender = document.querySelector(".gender");
+      let GenerateOtp = ""; // Declare GenerateOtp at the top
+
+      // Generate OTP
+      SendOtpBtn.addEventListener("click", () => {
+        GenerateOtp = "";
+        for (let i = 0; i < 6; i++) {
+          GenerateOtp += Math.floor(Math.random() * 10);
+        }
+        receivedOtp.value = GenerateOtp;
+        receivedOtp.removeAttribute("disabled");
+      });
+
+      // Verify OTP
+      OtpSubmitBtn.addEventListener("click", () => {
+        if (verificationOtp.value === GenerateOtp) {
+          alert("OTP verified successfully");
+          // verificationOtp.disabled = true;
+        } else {
+          alert("Incorrect OTP");
+        }
+      });
+
+      // Login button
+      btnLogin.addEventListener("click", () => {
+        let found = true;
+
+        // Validate Name Input
+        if (!/^[a-zA-Z]+$/.test(NameInput.value) || NameInput.value === "") {
+          found = false;
+          alert("Please enter a valid name");
+        }
+
+        // Validate Gender Input
+        if (
+          gender.value.toLowerCase() !== "male" &&
+          gender.value.toLowerCase() !== "female"
+        ) {
+          found = false;
+          alert("Please enter a valid gender (male/female)");
+        }
+
+        // Validate Number Input
+        let phoneNumber = NumberInput.value;
+        if (phoneNumber.length !== 10 || !/^[6789]/.test(phoneNumber)) {
+          found = false;
+          alert(
+            "Enter a valid 10-digit phone number starting with 6, 7, 8, or 9"
+          );
+        }
+
+        // Validate Date Input
+        if (UserDate.value === "") {
+          found = false;
+          alert("Please enter a date");
+        }
+
+        // Store user details if all validations pass
+        if (found) {
+          localStorage.setItem(
+            "userDetails",
+            JSON.stringify({
+              name: NameInput.value,
+              phoneNo: phoneNumber,
+              gender: gender.value,
+              date: UserDate.value,
+            })
+          );
+          alert("Login successful");
+          window.location.assign("./index.html");
+        } else {
+          alert("Please correct the errors before submitting");
+        }
+      });
+    </script>
+  </body>
+</html>

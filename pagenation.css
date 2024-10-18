@@ -1,0 +1,443 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal; */
+  font-family: "Edu AU VIC WA NT Hand", cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+/* body css */
+body {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  color: black;
+}
+
+/* Navigation Bar css */
+.nav_bar {
+  width: 100%;
+  height: auto;
+  display: flex;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #2c3e50;
+  /* background: linear-gradient(#ebf5fb,#e8daef,#e8f6f3); */
+  position: fixed;
+  z-index: 1;
+  /* border: 1px solid; */
+}
+
+.left_nav_bar,
+.right_nav_bar {
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  /* border: 1px solid green; */
+}
+
+.input_div {
+  margin-right: 10px;
+  width: 250px;
+  display: none;
+}
+.input_search {
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.Logo_btn {
+  width: auto;
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+}
+
+.Logo_img {
+  width: 150px;
+  height: 60px;
+  filter: saturate(8);
+  overflow: hidden;
+}
+
+.input {
+  width: 300px;
+  height: 30px;
+  padding: 5px;
+  border: none;
+  margin: 0px 10px 0px 0xp;
+  border-radius: 3px;
+  outline: none;
+}
+
+.log_in a {
+  height: 25px;
+  /* color: #000; */
+  color: #fff;
+  text-decoration: none;
+  margin-right: 50px;
+  font-size: 25px;
+  padding: 20px 0px 20px 0px;
+  overflow: hidden;
+}
+.log_in {
+  overflow: hidden;
+}
+
+/* Side Navigation Bar css */
+.main_body {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  margin: 70px 0px 0px 0px;
+  background-color: #3b7294bb;
+}
+
+.body_songs {
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  background-image: url("https://st.depositphotos.com/1993135/4798/i/450/depositphotos_47984341-stock-photo-music-background.jpg");
+  /* border: 1px solid green; */
+  background-size: 20lvw 100vh;
+
+  background-repeat: no-repeat;
+  height: 100% !important;
+  padding: 0;
+  margin: 20px 10px 0px 10px;
+  border-radius: 20px;
+}
+
+.parentDiv_left {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  /* border: 1px solid red; */
+  text-align: center;
+  color: #fff !important;
+}
+
+.home_div_btn,
+.search_div_btn,
+.profile {
+  display: flex;
+  align-items: center;
+  margin: 20px 20px 20px 20px;
+  cursor: pointer;
+  /* border: 1px solid yellow; */
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.profile:hover {
+  color: white;
+}
+
+.search_div_btn:hover {
+  color: #fff;
+}
+#side_bar_btn {
+  font-size: 30px;
+}
+.home_div_btn:hover {
+  color: #fff;
+}
+
+.home_img,
+.search_img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.home_search_btn {
+  font-size: 16px;
+}
+.profile {
+  margin: 0px;
+}
+#details {
+  padding: 10px 0px 10px 0px;
+}
+.profile_details {
+  margin: 10px;
+  width: 77%;
+  color: #000;
+  padding: 0px 10px 20px 40px;
+  font-size: 20px;
+  text-align: left;
+  height: auto;
+  /* border: 1px solid; */
+  border-radius: 20px;
+  background: linear-gradient(#d4e6f1, #a9dfbf);
+  z-index: 1;
+  display: none;
+  box-shadow: 2px 2px 10px #fff;
+}
+.logOut_btn {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  display: none;
+}
+.logOut_btn:hover {
+  background-color: #eb0606;
+  color: #fff;
+  border: none;
+}
+
+/* Main Content Area css */
+.parentDiv {
+  width: 75vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0px 0px 10px;
+  /* border: 2px solid red; */
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.page {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+/* Child Div css */
+.childDiv {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 19px;
+  display: inline-block;
+  background-image: url("https://img.freepik.com/free-vector/music-background_53876-90526.jpg");
+  background-size: cover;
+  opacity: 0.9;
+  color: #fff;
+  /* border: 2px solid green; */
+}
+.childDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.heading_tag,
+.Artists {
+  /* border: 1px solid; */
+  margin: 0px 0px 10px 0px;
+  padding: 3px 0px 3px 0px;
+}
+
+/* Pagination Items css */
+.page_item {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+#btn {
+  border: 1px solid #fff;
+  color: #fff;
+  width: auto;
+  height: 20px;
+  padding: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.page_item.active {
+  background-color: #f39c12;
+  color: #fff;
+  padding: 10px;
+}
+
+/* Image and Hover Styles Css */
+.img1_div {
+  display: inline-block;
+  margin: 10px;
+}
+
+.img1_div img,
+.img2_div img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #fff;
+}
+
+.hover_div {
+  overflow: hidden;
+  position: relative;
+  margin: 20px;
+  width: 180px;
+  height: 280px;
+  text-align: center;
+  vertical-align: top;
+  border-radius: 10px;
+  box-shadow: -1px -1px 10px;
+  background-color: #eb964c;
+  background-color: transparent;
+}
+.hover_div:hover {
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+  box-shadow: 3px 3px 10px #cd6155;
+  background-color: #fff;
+}
+
+/* Music Button Styles Css */
+.music_btn_div {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.musicBtn {
+  width: 40px;
+  height: 40px;
+  font-size: 17px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #e67e22;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  bottom: 130px;
+  left: 30px;
+  display: none;
+  text-align: center;
+}
+
+.musicBtn:hover {
+  opacity: 0.9;
+}
+
+/* Audio Css */
+audio {
+  display: none;
+}
+
+.footer {
+  width: 100%;
+  height: 200px;
+  border: 1px solid green;
+  background-color: rgba(0, 0, 0, 0.657);
+}
+.footer {
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.footerDiv {
+  margin: 10px 0px 0px 0px;
+  width: 300px;
+  height: auto;
+  /* border: 1px solid; */
+  margin: 30px;
+}
+h4 {
+  color: #fff;
+  font-size: 20px;
+}
+.footerDiv div {
+  font-size: 17px;
+  color: #fff;
+  margin: 10px;
+}
+#social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+@media (max-width: 600px) {
+  .nav_bar {
+    width: 100%;
+  }
+  .home_div_btn,
+  .search_div_btn {
+    margin: 20px 0px 10px 0px !important;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  .parentDiv_left {
+    display: none;
+  }
+  .main_body {
+    text-align: center;
+    padding: 0px;
+  }
+  .parentDiv {
+    width: 100vw;
+    height: 100% !important;
+    border: 1px solid;
+  }
+  .childDiv {
+    height: 100% !important;
+  }
+  .page {
+    width: 100vw;
+  }
+  .profile {
+    display: none;
+  }
+  #side_bar_btn {
+    display: none;
+  }
+  .body_songs {
+    padding: 0;
+    margin: 20px;
+    display: none;
+  }
+  .input,
+  .input_div {
+    display: block;
+    width: auto;
+  }
+  .Logo_img,
+  .Logo_btn {
+    width: auto;
+  }
+  .right_nav_bar {
+    width: 20vw;
+    text-align: center;
+  }
+  .left_nav_bar {
+    width: 70vw;
+  }
+}
